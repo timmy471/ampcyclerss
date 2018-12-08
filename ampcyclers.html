@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ampcyclers</title>
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+    crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <style>
+     
+     html, body {
+       height: 100%;
+    }
+    body {
+      background: url('images/real3.jpg') no-repeat center;    
+      background-size: cover;
+     font-family: "Philosopher", sans-serif;
+    }
+
+    
+
+  
+    
+    .header {
+      z-index: 1;
+      position:fixed;
+      top:0;
+      height:12%;
+      width:100%;
+      background-color: #AD3C3C;
+      padding-bottom: 0px;
+    }
+
+    .header__logo-box {
+      position: absolute;
+      top: 0.5rem;
+      left: 3rem;
+    }
+
+    .header__logo {
+      font-size: 3.5rem;
+    }
+
+    .logo-text {
+      font-family:niconne;
+      font-size: 2.8rem;
+      position:relative;
+      right:0.5rem;;
+     
+    }
+
+    .main-nav {
+      list-style-type: none;
+      overflow: hidden;
+      padding-right: 5rem;
+    }
+
+
+    .main-nav li {
+      float: right;
+     
+    }
+
+    .main-nav li a {
+      display: block;
+      color: #fff;
+      padding: 1.5rem 1rem;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .main-nav li a:hover {
+      color: black;
+      font-weight: bold;
+    }
+    .sub-nav{
+    display:hidden; 
+    position: absolute;
+    background-color:#AD3C3C;
+    min-width: 120px;
+    color:white;
+    z-index: 1;
+      overflow: hidden;
+      padding-right: 1rem;
+      text-decoration:none;
+    }
+    
+   
+    .sub-nav li a:hover{
+      color: black;
+      font-weight: bold;
+    }
+    .sub-nav li{
+      display:block;
+      float:none;
+      background-color:inherit;
+      text-align:left;
+    }
+    
+
+    .content {
+       position: absolute;
+       top: 18vw;       
+      left: 10vw;
+      right:50vw;
+      transform: translate(5%, 5%);
+      text-align: center;
+     
+    }
+    .text-box {
+      margin-bottom:5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+   
+}
+
+.text-box__main-heading {
+      display: block;
+      text-transform: capitalize;
+      font-size: 3.5rem;
+      font-weight: bold;
+      padding: 1.5rem;
+      padding-bottom:3rem;
+      color: #fff;
+
+      animation: moveInLeft 2s ease-out;
+    }
+
+.text-box__sub-heading {
+      display: block;
+      
+      font-size: 1.7rem;
+      padding: 0.5rem;
+      padding-bottom:4rem;
+      color: #fff;
+      font-weight: bold;
+      letter-spacing: 0.2rem;
+
+      animation: moveInRight 2s ease-out;
+    }
+
+    @keyframes moveInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+      }
+
+      80% {
+        transform: translateX(1rem);
+       
+      }
+
+      100% {
+        opacity: 1;
+        transform: translate(0);
+      
+      }
+
+
+    }
+
+    @keyframes moveInRight {
+      0% {
+        opacity: 1;
+        transform: translateX(10rem);
+      }
+
+      80% {
+        transform: translateX(-1rem);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+    .content__btn {
+      text-decoration: none;
+      background-color:rgb(187, 35, 93);
+      border-radius: 0.6rem;
+     
+      position: relative;
+    bottom: 1.7rem;
+      
+      padding: 0.4rem;
+      font-size: 1.6rem;
+      color: black;
+
+      animation: moveInBottom .5s ease-out .75s;
+      animation-fill-mode: backwards;
+      
+    }
+    .content__btn:hover{
+      cursor:pointer;
+      background-color:rgba(187, 35, 93, 0.5);
+    }
+
+    @keyframes moveInBottom {
+      0% {
+        opacity: 0;
+        transform: translateY(3rem);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translate(0);
+      }
+    }
+
+    .content__btn:hover {
+      background-color:rgb(207, 18, 90);
+    }
+
+  .sub-nav li a{
+    display:none;
+    color: black;
+    padding: 10px 1px;
+    text-decoration: none;
+    float:none;
+    font-family:inherit;
+    text-align: left;
+    color:white;
+}
+.dropdown__nav:hover > .sub-nav li a {
+    display: block;
+}
+
+.container_fluid {
+  position:relative;
+  top:40rem;
+  padding-top:2rem;
+  padding-left:5rem;
+  padding-right:5rem;
+  color:black;
+  background-color:#fff;
+  background-size:cover;
+  font-size:16px;
+}
+.strong{
+  font-size:18px;
+}
+.recycle-img{
+  height:25rem;
+  width:24rem;
+  position: relative;
+  top:-3rem;
+}
+.span{
+  color:green;
+}
+.span:hover{
+  color:rgba(11, 184, 25, 0.7);
+  cursor:pointer;
+  text-decoration:none;
+ 
+}
+.container_fluid__btn{
+  text-decoration: none;
+  background-color:rgb(187, 35, 93);
+  border-radius: 0.6rem;
+     
+  position: relative;
+  top:0.3rem;
+      
+  padding: 0.4rem;
+  font-size: 1rem;
+  color: black;
+}
+.container_fluid__btn:hover{
+  background-color:rgb(207, 18, 90);
+  cursor:pointer;
+}
+.supporters{
+  position:relative;
+  
+}
+.lawma, .access, .tony, .westafrica, .google, .stockexchange, .fcmb{
+  width:10rem;
+  padding-left:2rem;
+  animation: moveInLeft 2s ease-out;
+}
+.footer{
+  color:white;
+  position: relative;
+  top:42rem;
+  background-color:dimgrey;
+  padding-left:5rem;
+}
+.footer1{
+  padding-top:5rem;
+}
+.footer-head{
+  position:relative;
+  top:3rem;
+  
+  
+  font-family: "Philosopher", sans-serif;
+  font-size:18px;
+  
+}
+.footer-logo{
+  font-size:30px;
+}
+.footer-logo-text{
+  
+  position:relative;
+  left: -0.3rem;
+}
+.copyright{
+  padding-top:3rem;
+  font-size:13px;
+  
+}
+.footer-links li a{
+  text-decoration: none;
+  color:white;
+  font-size:13px;
+  display:block;
+  padding-top:3px;
+  padding-left:3rem;
+}
+.footer-links li a:hover{
+color:lightgray;
+text-transform:bold;
+}
+
+.footer ul{
+  list-style-type: none;
+  padding-top:-10rem;
+}
+.footer2-head{
+  position:relative;
+  left:5.3rem;
+  top:3.5rem;
+  font-family: "Philosopher", sans-serif;
+  font-size:16px;
+}
+.footer-3-p{
+  position:relative;
+  top:5rem;
+  right:2rem;
+}
+.footer3-list{
+  position:relative;
+  top:4rem;
+}
+.footer3-list li{
+  position:relative;
+  right:4.4rem;
+}
+.footer3-head{
+  position:relative;
+  right:2rem;
+  top:3.5rem;
+  font-family: "Philosopher", sans-serif;
+  font-size:16px;
+}
+
+
+
+  
+    
+
+
+    
+    
+
+
+    
+
+
+  </style>
+</head>
+<body>
+    <div class ="Section">
+    <div class="wrapper">
+      
+        <header class="header">
+            <div class="header__logo-box">
+              <i class="fab fa-asymmetrik header__logo"></i>
+              <span class="logo-text">mpcyclers</span>
+            </div>
+            <nav>
+              <ul class="main-nav ">
+                  <li class= "login">
+                      <a href="login.html">Login</a>
+                    </li>
+                    <li class = "contact">
+                        <a href="#">Contact Us</a>
+                      </li>
+                <li>
+                  <a href="#">Gallery</a>
+                </li>
+                <li class = "dropdown__nav">
+                  <a href="#">How It Works</a>
+                  
+                  <ul class = "sub-nav">
+                    <li><a href="#">Our Model</a></li>
+                    <li><a href="#">Waste Picker Initiative</a></li>
+                    <li><a href="#">Coporate Recycling</a></li>
+                    <li><a href="#">iRecycle</a></li>
+                  </ul>
+                </li>
+                <li class = "dropdown__nav">
+                  <a href="#">About Us</a>
+                  <ul class = "sub-nav">
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Partners</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+              </ul>
+            </nav>
+          </header>
+
+          <main class="content">
+            <h1 class="text-box">
+              <span class="text-box__main-heading">Ampcyclers!!!</span>
+              <span class="text-box__sub-heading">There's no such thing as "waste" in our world, "REUSE" is our term.</span>
+            </h1>
+            
+        <span class="content__btn"> Get started </span>
+        
+          </main>
+        </div>
+          <div class="container_fluid">
+            <p class = "strong">
+             <strong> We are a Waste Recycling and Social Benefit Venture</strong></p>
+            <div class="row">
+              <div class="col-sm-8">
+                <p>Ampcycleres is Nigeria’s foremost waste recycling and social benefit 
+                  venture that motivate post-consumers to recycle by creating value from their everyday waste.</p>
+                 
+                  <p>We have developed a POINT-BASED incentive model with which we collect Pure Water Sachets (PWS), PET Plastic Bottles (PET), Used Beverage
+                      Cans (UBC), Glass bottles (GBS), Old Newspapers (ONP) and Brown Corrugated Cartons (BCC) from
+                      registered post-consumers and in turn reward them with POINTS, which when accrued can be used to redeem household items and cash.</p>
+                        <p>Points are allocated based on a <a class = "span" href = "#">Points Earning Chart</a> where quantity of items are equated to the amount of points earned.</p>             
+              
+                        <span class="container_fluid__btn"> MORE ABOUT US </span>
+                        
+                    </div>
+                        
+                      
+              <div class="col-sm-4" >
+                <p><img class = "recycle-img" src = "images/recycle.jpg"></p>
+              </div>
+            </div>
+            <div class = "support">
+              <h3>
+                Proudly Supported By
+            </h3>
+            <p>RecyclePoints works in partnership with the Lagos State Waste Management Authority (LAWMA) in waste recycling and sanitation advocacy.</p>
+            </div>
+            <div class = "supporters">
+              <p><img class = "lawma" src = "images/lawma.jpg"> <img class = "access" src = "images/access.jpg"> 
+                <img class = "tony" src = "images/tony.jpg"> <img class = "google" src = "images/google.jpg"> 
+                <img class = "westafrica" src = "images/westafrica.jpg"> <img class = "stockexchange" src = "images/stockexchange.jpg">
+                <img class = "fcmb" src = "images/fcmb.jpg"></p>
+              </div>
+             
+          </div>
+          <div class = "footer">
+          <footer>
+           
+              <div class="row">
+                <div class="col-sm-4">
+                  <span class="footer-head">
+                    <i class="fab fa-asymmetrik footer-logo"></i>
+                    <span class="footer-logo-text"><strong>mpcyclers</strong></span>
+                  </span>
+                  <p class = "footer1">Ampcyclers is a waste recycling and social benefit venture that operates an incentive-based scheme which collects 
+                    recyclable materials from post consumers and in turn rewards them with “Points” which they can accumulate and use to
+                     redeem/shop for household items offered through our iRecycle store.</p>
+                     <p class = "copyright">©2018 Ampcyclers Ltd</p>
+  
+            </div>
+            <div class="col-sm-4">
+                <span class="footer2-head"><strong>LINKS</strong></span>
+                <p class = "footer1">
+                    <ul class = "footer-links">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">PARTNERS</a></li>
+                        <li><a href="#">HOW IT WORKS</a></li>
+                        <li><a href="#">REGISTER</a></li>
+                        <li><a href="#">SERVICES</a></li>
+                        <li><a href="#">GALLERY</a></li>
+                      </ul>
+                </p>
+          </div>
+          <div class="col-sm-4">
+            <div class= "footer-3">
+              <span class="footer3-head"><strong>CONTACTS</strong></span>
+              <p class = "footer-3-p"><strong>Ampcyclers</strong></p>
+              <ul class =  "footer3-list">
+              <li>Plot 102, Lagos Street, Off Cemetry Street,</li>
+              <li>Ebute – Metta EM 101212, Lagos, Nigeria.</li>
+              <li>Email Address: ayantunjitimilehin.com</li>
+              <li>Phones: +234 803 856 4373, +234 701 097 4298</li>
+            </ul>
+          </footer>
+        </div>
+        </div>
+  
+     
+</div>
+</div>
+</body>
+</html>
